@@ -2,11 +2,8 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => {
-    res.json({
-        success: true,
-        message: "Welcome to the API",
-    });
-});
+const quoteRoutes = require("./routes/quotes.routes");
+
+app.use(quoteRoutes);
 
 app.listen(3000);
