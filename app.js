@@ -1,9 +1,23 @@
 const express = require("express");
 
+const db = require("./data/database");
+const quoteRoutes = require("./router/quotes.routes");
+
 const app = express();
 
-const quoteRoutes = require("./routes/quotes.routes");
+app.use("/quote", quoteRoutes);
 
-app.use(quoteRoutes);
+app.use((error, req, res, next) => {
+    res.status(500).json({
+        error: "Something went wrong on the server",
+    });
+});
 
-app.listen(3000);
+db.initDb()
+    .then(() => {
+        app.listen(3000);
+    })
+    .catch((err) => {
+        console.error("Connecting to the database failed!");
+        console.error(err);
+    });

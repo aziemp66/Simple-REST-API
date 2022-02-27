@@ -1,11 +1,9 @@
 const express = require("express");
 
+const quotesController = require("../controllers/quotes.controller");
+
 const router = express.Router();
 
-router.get("/quote", (req, res) => {
-    res.json({
-        quote: "Have Unending Thirst for Knowledge",
-    });
-});
+router.get("/", quotesController.getRandomQuotes);
 
 module.exports = router;
