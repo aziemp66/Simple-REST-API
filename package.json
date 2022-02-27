@@ -1,0 +1,22 @@
+{
+    "name": "building-simple-rest-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aziemp66/Simple-REST-API.git"
+    },
+    "author": "Azie",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/aziemp66/Simple-REST-API/issues"
+    },
+    "homepage": "https://github.com/aziemp66/Simple-REST-API#readme",
+    "dependencies": {
+        "express": "^4.17.3"
+    }
+}
